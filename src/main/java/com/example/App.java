@@ -4,7 +4,7 @@ import org.graalvm.polyglot.*;
 
 public class App {
     public static void main(String[] args) {
-        try (Context context = Context.newBuilder("python").allowAllAccess(true).build()) {
+        try (Context context = GraalPyResources.contextBuilder) {
 
             // Run NumPy code
             Value result = context.eval("python",
